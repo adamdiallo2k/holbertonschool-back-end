@@ -4,7 +4,6 @@ This module starts a
 Flask web application with the following specifications:
 """
 
-import csv
 import requests
 import json
 import sys
