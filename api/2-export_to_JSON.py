@@ -4,8 +4,9 @@ This module starts a
 Flask web application with the following specifications:
 """
 
-import requests
+
 import json
+import requests
 import sys
 
 def get_employee_todo_progress(employee_id):
