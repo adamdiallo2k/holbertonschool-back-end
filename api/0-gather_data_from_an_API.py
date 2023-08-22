@@ -9,8 +9,9 @@ import sys
 
 def get_employee_todo_progress(employee_id):
     """Display the API information."""
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    base_url = "https://jsonplaceholder.typicode.com"
+    user_url = f"{base_url}/users/{employee_id}"
+    todos_url = f"{base_url}/users/{employee_id}/todos"
 
     user_response = requests.get(user_url)
     todos_response = requests.get(todos_url)
@@ -25,7 +26,8 @@ def get_employee_todo_progress(employee_id):
     completed_tasks = [task for task in todos_data if task['completed']]
     total_tasks = len(todos_data)
 
-    print(f"Employee {user_data['name']} is done with tasks({len(completed_tasks)}/{total_tasks}):")
+    print(f"Employee {user_data['name']} is done with tasks"
+          f"({len(completed_tasks)}/{total_tasks}):")
     for task in completed_tasks:
         print(f"\t {task['title']}")
 
